@@ -14,3 +14,7 @@ export interface CreateNote {
   content: string;
   tag: Tag;
 }
+
+type Biim = {
+  biim: string;
+};
