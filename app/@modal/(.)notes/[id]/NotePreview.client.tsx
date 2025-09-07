@@ -3,7 +3,7 @@
 import Modal from '@/components/Modal/Modal';
 import css from './NotePreview.module.css';
 import { useParams, useRouter } from 'next/navigation';
-import { fetchNoteId } from '@/lib/api';
+import { fetchNoteId } from '@/lib/api/clientApi';
 import { useQuery } from '@tanstack/react-query';
 import { HiMiniXMark } from 'react-icons/hi2';
 

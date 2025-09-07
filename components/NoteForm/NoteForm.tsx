@@ -3,7 +3,7 @@
 import css from './NoteForm.module.css';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { createNote } from '../../lib/api';
+import { createNote } from '@/lib/api/clientApi';
 import { SlArrowDown } from 'react-icons/sl';
 import { HiMiniCheck } from 'react-icons/hi2';
 import { HiMiniXMark } from 'react-icons/hi2';
