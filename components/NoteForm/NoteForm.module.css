@@ -1,0 +1,168 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.input,
+.textarea,
+.select {
+  margin-top: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  resize: none;
+  border-color: #6c757d77;
+  background-color: #e2e2e23a;
+}
+
+.input:hover,
+.input:focus,
+.textarea:hover,
+.textarea:focus,
+.select:hover,
+.select:focus {
+  border-color: #757779;
+  outline: none;
+}
+
+.select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.arrowFather {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  width: 50%;
+}
+
+.arrowFather:hover .arrow,
+.arrowFather:focus .arrow {
+  fill: #0d6efd;
+  stroke: #0d6efd;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 15%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 45px;
+  height: 40px;
+}
+
+.submitButton:hover {
+  background-color: #0b5ed7;
+}
+
+.cancelButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #f8f9fa;
+  color: #212529;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 45px;
+  height: 40px;
+}
+
+.cancelButton:hover {
+  background-color: #e2e6ea;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+}
+/* ? */
+.display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.display span {
+  font-size: 14px;
+  color: #dc3545;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  cursor: default;
+}
+
+.closeX {
+  width: 27px;
+  height: 27px;
+}
+
+.closeV {
+  width: 25px;
+  height: 25px;
+}
+
+.spinner {
+  background-color: #0d6efd;
+}
+
+/* ! Validation */
+/* ?input */
+.input:user-invalid {
+  border: 1px solid #d64040;
+  color: #d64040;
+}
+
+.input:user-invalid + .inputInvalidText {
+  display: block;
+}
+
+/* ?area */
+.textarea:user-invalid {
+  border: 1px solid #d64040;
+  color: #d64040;
+}
+
+.textarea:user-invalid + .areaInvalidText {
+  display: block;
+}
