@@ -2,22 +2,21 @@ import { cookies } from 'next/headers';
 import { nextServer } from './api';
 import { Note } from '@/types/note';
 import { User } from '@/types/user';
-import { FetchNotesResponse, FetchNotesParams } from './clientApi';
-import type { AxiosResponse } from 'axios';
+import { FetchNotesResponse } from './clientApi';
 
-export const checkServerSession = async () => {
+export async function checkServerSession() {
   const cookieStore = await cookies();
-  const responce = await nextServer.get('/auth/session', {
+  const response = await nextServer.get('/auth/session', {
     headers: { Cookie: cookieStore.toString() },
   });
-  return responce;
-};
+  return response;
+}
 
-export const fetchNotes = async (
+export async function fetchNotes(
   search: string,
   page: number,
   tag?: string | null,
-): Promise<FetchNotesParams> => {
+): Promise<FetchNotesResponse> {
   const cookieStore = await cookies();
   const params = {
     params: {
@@ -29,10 +28,10 @@ export const fetchNotes = async (
     headers: { Cookie: cookieStore.toString() },
   };
 
-  const { data } = await nextServer.get<FetchNotesParams>('/notes', params);
+  const { data } = await nextServer.get<FetchNotesResponse>('/notes', params);
 
   return data;
-};
+}
 
 export async function fetchNoteId(id: string): Promise<Note> {
   const cookieStore = await cookies();
@@ -45,7 +44,9 @@ export async function fetchNoteId(id: string): Promise<Note> {
 // ! Контроль доступу
 export type SessionResponse = { success: boolean } | User | null;
 
-function isSuccessResponse(x: SessionResponse): x is { success: boolean } {
+export function isSuccessResponse(
+  x: SessionResponse,
+): x is { success: boolean } {
   return typeof x === 'object' && x !== null && 'success' in x;
 }
 
@@ -55,10 +56,10 @@ export async function sHasSession(): Promise<boolean> {
   return isSuccessResponse(data) ? data.success : Boolean(data);
 }
 
-export const getMe = async () => {
+export async function getMe(): Promise<User> {
   const cookieStore = await cookies();
   const { data } = await nextServer.get<User>('/users/me', {
     headers: { Cookie: cookieStore.toString() },
   });
   return data;
-};
+}
