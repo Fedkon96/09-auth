@@ -1,20 +1,11 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-
 interface Props {
   children: React.ReactNode;
 }
 
+import PublicLayoutClient from './PublicLayoutClient';
+
 const PublicLayout = ({ children }: Props) => {
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-  useEffect(() => {
-    router.refresh();
-    setLoading(false);
-  }, [router]);
-  return <>{loading ? <p>Loading...</p> : children}</>;
+  return <PublicLayoutClient>{children}</PublicLayoutClient>;
 };
 
 export default PublicLayout;

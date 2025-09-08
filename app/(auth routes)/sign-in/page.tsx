@@ -20,7 +20,6 @@ export default function SignInPage() {
   const router = useRouter();
   const sp = useSearchParams();
 
-  // Отримання маршруту для редіректу або default '/profile'
   const rawFrom = sp.get('from');
   const from = rawFrom ? decodeURIComponent(rawFrom) : '/profile';
 
@@ -51,7 +50,7 @@ export default function SignInPage() {
   return (
     <main className={css.mainContent}>
       <form className={css.form} onSubmit={handleSubmit}>
-        <h1 className={css.formTitle}>Sign in</h1>
+        <h1 className={css.formTitle}>Login</h1>
 
         <div className={css.formGroup}>
           <label htmlFor="email">Email</label>
@@ -86,7 +85,7 @@ export default function SignInPage() {
             disabled={isPending}
             aria-busy={isPending}
           >
-            {isPending ? 'Logging in...' : 'Log in'}
+            {isPending ? 'Logging...' : 'Log in'}
           </button>
         </div>
 

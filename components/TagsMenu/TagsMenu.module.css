@@ -34,6 +34,8 @@
 
 .menuList {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: calc(100% + 6px);
   left: 0;
   background-color: #333;
@@ -72,6 +74,5 @@
   top: 30%;
   width: 17px;
   height: 17px;
-  padding-left: 6px;
-  padding-bottom: 5px;
+  /* padding-left: 6px; */
 }

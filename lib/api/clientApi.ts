@@ -1,6 +1,6 @@
 import { Credentials, User } from '@/types/user';
 import { nextServer } from './api';
-import { CreateNote, Note, Tag } from '@/types/note';
+import { Note, Tag } from '@/types/note';
 
 // !Interface
 interface SessionStatus {
@@ -35,6 +35,7 @@ export async function updateUser(payload: {
 // !HTTP
 export const register = async (credentials: Credentials) => {
   const { data } = await nextServer.post<User>('/auth/register', credentials);
+  console.log('API REGISTER DATA:', data);
   return data;
 };
 export const login = async (credentials: Credentials) => {

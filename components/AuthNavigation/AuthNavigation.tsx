@@ -5,6 +5,8 @@ import TagsMenu from '../TagsMenu/TagsMenu';
 import Link from 'next/link';
 import { logout } from '@/lib/api/clientApi';
 import { useRouter } from 'next/navigation';
+import { ImExit } from 'react-icons/im';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const AuthNavigation = () => {
   const router = useRouter();
@@ -17,29 +19,53 @@ const AuthNavigation = () => {
   return (
     <>
       {isAuthenticated ? (
-        <>
-          <li>
-            <TagsMenu />
-          </li>
-          <li className={css.home}>
-            <Link href={'/profile'}>Profile</Link>
-          </li>
-          <li>
-            <p>{user?.email}</p>
-            <button type="button" onClick={handleClickLogOut}>
-              Log Out
-            </button>
-          </li>
-        </>
+        <div className={css.containerAuth}>
+          <TagsMenu />
+          <ul>
+            <li className={css.navigationItem}>
+              <Link
+                href="/profile"
+                prefetch={false}
+                className={css.navigationLink}
+              >
+                <AiOutlineUser className={css.linkUser} />
+              </Link>
+            </li>
+            <li className={css.navigationItem}>
+              <p className={css.userEmail}>{user?.email}</p>
+              <button
+                className={css.logoutButton}
+                type="button"
+                onClick={handleClickLogOut}
+              >
+                <ImExit className={css.logoutButtonIcon} />
+              </button>
+            </li>
+          </ul>
+        </div>
       ) : (
-        <>
-          <li className={css.home}>
-            <Link href="/sign-in">Sign-In</Link>
-          </li>
-          <li className={css.home}>
-            <Link href="/sign-up">Sign-Up</Link>
-          </li>
-        </>
+        <div className={css.containerNoAuth}>
+          <ul>
+            <li className={css.navigationItem}>
+              <Link
+                className={`${css.navigationLink} ${css.linkBorderLogin}`}
+                prefetch={false}
+                href="/sign-in"
+              >
+                Login
+              </Link>
+            </li>
+            <li className={`${css.navigationLink} ${css.linkBorderRegister}`}>
+              <Link
+                href="/sign-up"
+                prefetch={false}
+                className={css.navigationLink}
+              >
+                Register
+              </Link>
+            </li>
+          </ul>
+        </div>
       )}
     </>
   );

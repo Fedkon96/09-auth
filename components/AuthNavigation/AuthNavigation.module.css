@@ -1,3 +1,40 @@
+.userEmail {
+  color: black;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.logoutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  /* color: white; */
+  /* padding: 0.3rem 0.6rem;
+  border-radius: 4px; */
+  cursor: pointer;
+  /* font-size: 0.9rem;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; */
+}
+
+.logoutButtonIcon {
+  width: 25px;
+  height: 25px;
+  fill: black;
+}
+
+.logoutButtonIcon:hover {
+  fill: rgb(100, 100, 100);
+}
+
+.logoutButton:hover {
+  background-color: white;
+  color: #333;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,6 +42,26 @@
   padding: 1rem 2rem;
   background-color: #333;
   color: white;
+}
+
+.containerNoAuth ul {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  padding-left: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.containerAuth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerAuth ul {
+  display: flex;
+  gap: 10px;
 }
 
 .headerLink {
@@ -28,19 +85,57 @@
 
 .navigationItem {
   display: flex;
+  gap: 15px;
   align-items: center;
 }
 
 .navigationLink {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: white;
-  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
 }
 
 .navigationLink:hover {
-  color: #ddd;
+  color: #797878;
 }
 
 .home {
   align-self: center;
 }
+
+.linkUser {
+  width: 25px;
+  height: 25px;
+  fill: black;
+}
+
+.linkUser:hover {
+  fill: #0b5ed7;
+}
+
+/* .linkBorderLogin {
+  padding: 0px 5px 3px 10px;
+  border-left: 1px solid #000;
+}
+
+.linkBorderLogin:hover {
+  border-bottom: 1px solid #0b5ed7;
+  border-top: 1px solid #0b5ed7;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+  border-color: #0b5ed7;
+}
+
+.linkBorderRegister {
+  padding: 0px 10px 3px 5px;
+  padding-right: 10px;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+} */

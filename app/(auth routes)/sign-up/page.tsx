@@ -45,7 +45,7 @@ export default function SignUpPage() {
   return (
     <main className={css.mainContent}>
       <form className={css.form} onSubmit={handleSubmit}>
-        <h1 className={css.formTitle}>Sign up</h1>
+        <h1 className={css.formTitle}>Register</h1>
 
         <div className={css.formGroup}>
           <label htmlFor="email">Email</label>

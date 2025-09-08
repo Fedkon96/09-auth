@@ -4,17 +4,18 @@ import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import { sHasSession, getMe } from '@/lib/api/serverApi';
 import css from './ProfilePage.module.css';
+import { AiOutlineSetting } from 'react-icons/ai';
 
 export const metadata: Metadata = {
-  title: 'Profile — NoteHub',
+  title: 'Profile',
   description: 'Your NoteHub profile page',
   openGraph: {
-    title: 'Profile — NoteHub',
+    title: 'Profile',
     description: 'Your NoteHub profile page',
-    url: 'https://09-auth-navy-psi.vercel.app/profile',
+    url: 'https://09-auth-black.vercel.app/profile',
     images: [
       {
-        url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
+        url: '/images/note.jpg',
         width: 1200,
         height: 630,
         alt: 'NoteHub Profile',
@@ -29,16 +30,15 @@ export default async function ProfilePage() {
 
   const user = await getMe();
 
-  const avatar = user.avatar?.trim() ? user.avatar : '/avatar.png';
   const username = user.username || user.email.split('@')[0];
 
   return (
     <main className={css.mainContent}>
       <div className={css.profileCard}>
         <div className={css.header}>
-          <h1 className={css.formTitle}>Profile Page</h1>
+          <h1 className={css.formTitle}>Profile</h1>
           <Link href="/profile/edit" className={css.editProfileButton}>
-            Edit Profile
+            <AiOutlineSetting className={css.editProfileIcon} />
           </Link>
         </div>
 
