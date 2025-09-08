@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import type { Metadata } from 'next';
+
 import { sHasSession, getMe } from '@/lib/api/serverApi';
 import css from './ProfilePage.module.css';
 import { AiOutlineSetting } from 'react-icons/ai';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Profile',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Profile',
     description: 'Your NoteHub profile page',
-    url: 'https://09-auth-black.vercel.app/profile',
+    url: 'https://09-auth-rosy-delta.vercel.app/profile',
     images: [
       {
         url: '/images/note.jpg',

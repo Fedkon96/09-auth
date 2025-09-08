@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NoteHub',
     description: 'An application for note-taking and organization',
-    url: 'https://08-zustand-seven-phi.vercel.app/',
+    url: 'https://09-auth-rosy-delta.vercel.app/',
     images: [
       {
         url: '/images/note.jpg',

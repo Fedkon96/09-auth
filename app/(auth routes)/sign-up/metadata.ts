@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Register | Note Hub',
     description: 'Register to your account to access your notes.',
-    url: '/sign-in',
+    url: 'https://09-auth-rosy-delta.vercel.app/sign-in',
     siteName: 'Note Hub',
     type: 'website',
     images: [

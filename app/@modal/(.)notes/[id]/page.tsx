@@ -5,6 +5,25 @@ import {
   QueryClient,
 } from '@tanstack/react-query';
 import NotePreview from './NotePreview.client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Detail',
+  description: 'Detail page',
+  openGraph: {
+    title: 'Detail',
+    description: 'Detail page',
+    url: 'https://09-auth-rosy-delta.vercel.app/@modal/(.)notes/[id]',
+    images: [
+      {
+        url: '/images/note.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'NoteHub Profile',
+      },
+    ],
+  },
+};
 
 interface PreviewProps {
   params: Promise<{ id: string }>;
