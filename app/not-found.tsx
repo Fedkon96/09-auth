@@ -25,7 +25,7 @@ const NotFound = () => {
     <div>
       <h1 className={css.title}>404 - Page not found</h1>
       <p className={css.description}>
-        You will be redirected to the homepage in a few seconds…
+        You will be redirected, to the homepage in a few seconds…
       </p>
       <NotFoundRedirect />
     </div>
